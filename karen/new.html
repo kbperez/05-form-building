@@ -48,7 +48,7 @@
 
       <section id="write" class="tab-content">
         <h1>Create New Article</h1>
-        <!-- TODO: Set up a form to accept user input for a new blog article. Remember that we need:
+        <!-- DONE: Set up a form to accept user input for a new blog article. Remember that we need:
            1. Article title
            2. Article body
            3. Article author
@@ -57,10 +57,22 @@
            6. Some way to know if this article is a draft or is published -->
          <form action="#" is="new-form">
            <label>
-             <input type="text" id="article-author" placeholder="Article Name" required>
+             <input type="text" id="article-title" placeholder="Article Title" required>
            </label>
-           <textarea></textarea>
-
+           <label>
+              <textarea type="text" id="article-body" placeholder="Body" rows"8" columns="40" required></textarea>
+           <label>
+             <input type="text" id="article-author" placeholder="Article Author" required>
+           </label>
+           <label>
+             <input type="text" id="article-authorurl" placeholder="Article Author URL" required>
+           </label>
+           <label>
+             <input type="text" id="article-cat" placeholder="Article Category" required>
+           </label>
+           <label>
+             <input type="checkbox" id="article-published" value="">Published?
+           </label>
          </form>
       </section>
 
@@ -71,7 +83,7 @@
       <section id="article-export">
         <!-- TODO: Refer to the preview image to see what we will be building here: we need a container of some kind to hold a JSON export of our article. Ideally this container would show only a incipit (short preview) of the JSON and also be clickable to allow easy selection of the text it holds. What kind of element could we use for this? -->
 
-        <label id-"export-field" for="article-json" class="pull-right">
+        <label id="export-field" for="article-json" class="pull-right">
           <input type="text" readonly id="article-json">
           When finalized, copy the above JSON, and paste into blogArticles.js
         </label>
@@ -85,16 +97,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <!-- NOTE (stretch goal): Include script tags for 3rd party libraries to enable Markdown rendering and code syntax highlighting. Use the minified CDN. Keep in mind that if we want these features to render properly on our main blog page (index.html) that we'll need to add those scripts over there, too. -->
-    <script src="/scripts/blogArticles.js"></script>
-    <script src="/scripts/article.js"></script>
-    <script src="/scripts/articleView.js"></script>
+    <script src="scripts/blogArticles.js"></script>
+    <script src="scripts/article.js"></script>
+    <script src="scripts/articleView.js"></script>
     <script>
-      // TODO: We will need to call a function here to initialize the behaviors on this page, once we get them built out. Why?
+      // DONE: We will need to call a function here to initialize the behaviors on this page, once we get them built out. Why?
       // (Look at the bottom of index.html as a reference. Since we are now using our JS on two different HTML pages that have different needs as to what parts of the code they utilize, we need to build a function that inializes each page.)
       //  Hint: Look in articleView.js for a function that does this.
-
+      articleView.initNewArticlePage()
       // COMMENT: What is this function doing? Why do we need it?
-      // PUT YOUR RESPONSE HERE
+      // This function is initialize the new article page, calling all the functions needed to get it ready for display.
     </script>
   </body>
 </html>
